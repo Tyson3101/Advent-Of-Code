@@ -1,0 +1,32 @@
+import allInput from "./input/day2Input.js";
+
+const input = allInput.split("\n");
+
+// Part One
+const passwordREGEX = /\w+$/i;
+const codeREGEX = /^\d+-\d+ \D:/i;
+
+function findCorrectPasswords(string: string) {
+  const password = string.match(passwordREGEX)[0];
+  const code = string.match(codeREGEX)[0];
+  const checkChar = code[code.length - 2];
+  const checkLength: number[] = [Number(code.match(/^\d+/)[0])];
+  for (
+    let i = Number(code.match(/^\d+/)[0]) + 1;
+    i < Number(code.match(/-\d+/)[0].slice(1));
+    i++
+  ) {
+    checkLength.push(i);
+  }
+  checkLength.push(Number(code.match(/-\d+/)[0].slice(1)));
+  console.log("Numbers its need to be", checkLength);
+  const check = [...password].filter((letter) => letter.includes(checkChar))
+    .length;
+  return checkLength.includes(check);
+}
+
+const solution = input.filter(findCorrectPasswords).length;
+
+console.log(solution);
+
+// 40m 42s
