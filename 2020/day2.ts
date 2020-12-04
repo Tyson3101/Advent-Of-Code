@@ -2,11 +2,12 @@ import allInput from "./input/day2Input.js";
 
 const input = allInput.split("\n");
 
-// Part One
 const passwordREGEX = /\w+$/i;
 const codeREGEX = /^\d+-\d+ \D:/i;
 
-function findCorrectPasswords(string: string) {
+// Part One
+
+function findCorrectPasswordsPARTONE(string: string) {
   const password = string.match(passwordREGEX)[0];
   const code = string.match(codeREGEX)[0];
   const checkChar = code[code.length - 2];
@@ -19,14 +20,50 @@ function findCorrectPasswords(string: string) {
     checkLength.push(i);
   }
   checkLength.push(Number(code.match(/-\d+/)[0].slice(1)));
-  console.log("Numbers its need to be", checkLength);
   const check = [...password].filter((letter) => letter.includes(checkChar))
     .length;
   return checkLength.includes(check);
+}
+
+const solutionPARTONE = input.filter(findCorrectPasswordsPARTONE).length;
+
+console.log(solutionPARTONE);
+
+// 40m 42s
+
+// Part Two
+function findCorrectPasswords(string: string) {
+  const password = string.match(passwordREGEX)[0];
+  const code = string.match(codeREGEX)[0];
+  const checkChar = code[code.length - 2];
+  const correctPostion = [
+    Number(code.split("-")[0]) - 1,
+    Number(code.split("-")[1].split(/ \D:/)[0]) - 1,
+  ];
+  function finalCheck() {
+    if (
+      password[correctPostion[0]] &&
+      password[correctPostion[1]] &&
+      password[correctPostion[0]] === checkChar &&
+      password[correctPostion[1]] !== checkChar
+    )
+      return true;
+    else if (
+      password[correctPostion[0]] &&
+      password[correctPostion[1]] &&
+      password[correctPostion[1]] === checkChar &&
+      password[correctPostion[0]] !== checkChar
+    )
+      return true;
+    else return false;
+  }
+  return finalCheck();
 }
 
 const solution = input.filter(findCorrectPasswords).length;
 
 console.log(solution);
 
-// 40m 42s
+// 31m 45s
+
+// ALL TOGETHER = 1h 8m 1s
