@@ -1,6 +1,6 @@
 import * as fs from "fs";
 
-const input = fs.readFileSync("./input/day2Input.txt", "utf-8").split("\n");
+const input = fs.readFileSync("./input/day2Input.txt", "utf-8").split(/[ \n]/g);
 
 const passwordREGEX = /\w+$/i;
 const codeREGEX = /^\d+-\d+ \D:/i;
@@ -25,8 +25,8 @@ function findCorrectPasswordsPARTONE(string: string) {
   return checkLength.includes(check);
 }
 
-const solutionPARTONE = input.filter(findCorrectPasswordsPARTONE).length;
+const solution = input.filter(findCorrectPasswordsPARTONE).length;
 
-console.log(solutionPARTONE);
+console.log("Solution:", solution);
 
 // 40m 42s

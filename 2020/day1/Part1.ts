@@ -1,13 +1,9 @@
 import * as fs from "fs";
-const stringOfNumbers: string[] = fs
+
+const numbers: number[] = fs
   .readFileSync("./dist/2020/day1/input/day1Input.txt", "utf-8")
-  .split("\n");
-
-const numbers: number[] = [];
-
-stringOfNumbers
-  .filter((str) => Number(str) !== 0)
-  .forEach((str) => numbers.push(Number(str)));
+  .split(/[ \n]/g)
+  .map((str) => Number(str));
 
 // Part One
 
@@ -24,6 +20,6 @@ numbers.forEach((numOne: number) => {
 
 const solution = num1 * num2;
 
-console.log(solution);
+console.log("Solution:", solution);
 
 // 21m 54s : Completion

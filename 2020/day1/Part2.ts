@@ -1,13 +1,9 @@
 import * as fs from "fs";
-const stringOfNumbers: string[] = fs
+
+const numbers: number[] = fs
   .readFileSync("./dist/2020/day1/input/day1Input.txt", "utf-8")
-  .split("\n");
-
-const numbers: number[] = [];
-
-stringOfNumbers
-  .filter((str) => Number(str) !== 0)
-  .forEach((str) => numbers.push(Number(str)));
+  .split(/[ \n]/g)
+  .map((str) => Number(str));
 
 // Part Two
 
@@ -20,7 +16,6 @@ numbers.forEach((numOne: number) => {
         num1 = numOne;
         num2 = numTwo;
         num3 = numThree;
-        console.log(numOne, numTwo, numThree, numOne + numTwo + numThree);
       }
     });
   });
