@@ -1,7 +1,7 @@
 import * as fs from "fs";
 
 const numbers: number[] = fs
-  .readFileSync("./dist/2020/day1/input.txt", "utf-8")
+  .readFileSync("./2020/day1/input.txt", "utf-8")
   .split(/\s+|\n/g)
   .map((str) => Number(str));
 

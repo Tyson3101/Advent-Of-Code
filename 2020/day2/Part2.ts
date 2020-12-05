@@ -1,7 +1,7 @@
 import * as fs from "fs";
 
 const input = fs
-  .readFileSync("./dist/2020/day2/input.txt", "utf-8")
+  .readFileSync("./2020/day2/input.txt", "utf-8")
   .split(/\r|\n/g)
   .filter((str) => str.length);
 
