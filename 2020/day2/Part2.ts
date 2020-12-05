@@ -17,15 +17,11 @@ function findCorrectPasswords(string: string) {
   ];
   function finalCheck() {
     if (
-      password[correctPostion[0]] &&
-      password[correctPostion[1]] &&
       password[correctPostion[0]] === checkChar &&
       password[correctPostion[1]] !== checkChar
     )
       return true;
     else if (
-      password[correctPostion[0]] &&
-      password[correctPostion[1]] &&
       password[correctPostion[1]] === checkChar &&
       password[correctPostion[0]] !== checkChar
     )
