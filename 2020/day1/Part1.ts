@@ -1,8 +1,8 @@
 import * as fs from "fs";
 
 const numbers: number[] = fs
-  .readFileSync("./dist/2020/day1/input/day1Input.txt", "utf-8")
-  .split(/[ \n]/g)
+  .readFileSync("./dist/2020/day1/input.txt", "utf-8")
+  .split(/\s+|\n/g)
   .map((str) => Number(str));
 
 // Part One
