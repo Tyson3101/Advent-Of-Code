@@ -7,7 +7,7 @@ const map = fs
 
 // Part One
 
-function getTress(): string[] {
+function getTrees(): string[] {
   const path: string[] = [];
   let last: number = 0;
   for (let i = 0; i < map.length; i++) {
@@ -17,7 +17,7 @@ function getTress(): string[] {
   return path.filter((str) => str === "#");
 }
 
-const solution = getTress().length;
+const solution = getTrees().length;
 
 console.log("Solution:", solution);
 
