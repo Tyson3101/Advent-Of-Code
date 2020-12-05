@@ -5,6 +5,8 @@ const map = fs
   .split(/\s+|\n/g)
   .map((slope) => slope.repeat(32));
 
+// Part One
+
 function getTress(): string[] {
   const path: string[] = [];
   let last: number = 0;
