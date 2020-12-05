@@ -1,6 +1,8 @@
 import * as fs from "fs";
 
-const input = fs.readFileSync("./input/day2Input.txt", "utf-8").split(/[ \n]/g);
+const input = fs
+  .readFileSync(".dist/2020/day2/input/day2Input.txt", "utf-8")
+  .split(/\n/g);
 
 const passwordREGEX = /\w+$/i;
 const codeREGEX = /^\d+-\d+ \D:/i;
