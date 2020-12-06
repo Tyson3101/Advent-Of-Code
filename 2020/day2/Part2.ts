@@ -37,5 +37,3 @@ function findCorrectPasswords(string: string) {
 const solution = input.filter(findCorrectPasswords).length;
 
 console.log("Solution:", solution);
-
-// 31m 45s

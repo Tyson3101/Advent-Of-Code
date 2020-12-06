@@ -20,5 +20,3 @@ function getTrees(): string[] {
 const solution = getTrees().length;
 
 console.log("Solution:", solution);
-
-// 28m 26s : Completion

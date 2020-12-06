@@ -31,5 +31,3 @@ function findCorrectPasswordsPARTONE(string: string) {
 const solution = input.filter(findCorrectPasswordsPARTONE).length;
 
 console.log("Solution:", solution);
-
-// 40m 42s
