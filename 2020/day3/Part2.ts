@@ -39,7 +39,7 @@ const allTimeTrees: number[] = paths.map(
 
 console.log(allTimeTrees);
 
-const solution = allTimeTrees.reduce((acc, count) => acc * count, 1);
+const solution = allTimeTrees.reduce((acc, count) => acc * count);
 
 console.log("Solution:", solution);
 
