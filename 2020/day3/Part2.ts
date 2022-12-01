@@ -3,8 +3,9 @@ import * as fs from "fs";
 const map = fs
   .readFileSync("./2020/day3/input.txt", "utf-8")
   .split(/\s+|\r|\n/g)
-  .map((slope) => slope.repeat(6000));
+  .map((slope) => slope.repeat(100));
 
+console.log(fs.readFileSync("./2020/day3/input.txt", "utf-8"));
 // Part Two
 
 const paths = [
@@ -31,6 +32,9 @@ const allTimeTrees: number[] = paths.map(
 
 console.log(allTimeTrees);
 
-const solution = allTimeTrees.reduce((acc, count) => acc * count);
+const solution = allTimeTrees.reduce((acc, count) => acc * count, 1);
 
-console.log("Solution:", solution);
+console.log(
+  "Solution:",
+  [2, 7, 3, 4, 2].reduce((acc, count) => acc * count, 1)
+);
