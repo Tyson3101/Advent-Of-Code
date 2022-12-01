@@ -1,9 +1,5 @@
 # Advent-of-Code
 
-## Description:
-
-### Trying this out. Hope goes well!
+### My solutions to the [Advent of Code](http://adventofcode.com/) puzzles.
 
 ## Link: https://adventofcode.com/2022/
-
-#### Up to Day 3
